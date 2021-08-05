@@ -1,27 +1,10 @@
 kind: pipeline
-name: default
+name: go1.16
 type: docker
 
-clone:
-  depth: 50
-  
 steps:
-- name: test
-  image: golang
-  volumes:
-  - name: deps
-    path: /go
-  commands:
-  - go test
-
-- name: build
-  image: golang
-  volumes:
-  - name: deps
-    path: /go
-  commands:
-  - go build
-
-volumes:
-- name: deps
-  temp: {}
+  - name: test
+    image: golang:1.16
+    commands:
+      - go vet ./...
+      - go test ./...
