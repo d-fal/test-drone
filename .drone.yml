@@ -4,7 +4,7 @@ type: docker
 
 steps:
   - name: test
-    image: golang:1.16
+    image: go1.16
     commands:
       - go vet ./...
       - go test ./...
