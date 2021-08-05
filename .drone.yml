@@ -7,10 +7,5 @@ steps:
     image: golang:1.16
     commands:
       - go test ./...
-  - name: coverage
-    image: plugins/codecov
-    settings:
-      token:
-        from_secret: codecov-token
-      files:
-        - coverage.txt
+
+
