@@ -1,5 +1,5 @@
 kind: pipeline
-name: go1.16
+name: default
 type: docker
 
 steps:
