@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
+
+func homePage(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "My Awesome Go App")
+}
+
+func setupRoutes() {
+	http.HandleFunc("/", homePage)
+}
 
 func main() {
-	fmt.Printf("hello %v\n", "world")
+	fmt.Println("Go Web App Started on Port 4000")
+	setupRoutes()
+	http.ListenAndServe(":4000", nil)
 }
