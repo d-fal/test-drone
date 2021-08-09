@@ -10,5 +10,4 @@ before_install:
   - go get -v golang.org/x/lint/golint
 
 script:
-  - ./pre-commit
   - go test -cpu=1,2 -v -tags integration ./...
